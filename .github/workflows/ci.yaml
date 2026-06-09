@@ -1,12 +1,7 @@
 name: CI
 
 on:
-    push:
-        branches-ignore:
-            - 'github-comments'
-    pull_request:
-        branches-ignore:
-            - 'github-comments'
+  workflow_dispatch:
 
 permissions:
     contents: read
@@ -15,7 +10,7 @@ jobs:
     symfony-docs-builder-build:
         name: Build (symfony-tools/docs-builder)
 
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
 
         continue-on-error: true
 
@@ -52,7 +47,7 @@ jobs:
     doctor-rst:
         name: Lint (DOCtor-RST)
 
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
 
         steps:
             -   name: "Checkout"
@@ -79,7 +74,7 @@ jobs:
     symfony-code-block-checker:
         name: Code Blocks
 
-        runs-on: ubuntu-latest
+        runs-on: self-hosted
 
         continue-on-error: true
 
