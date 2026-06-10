@@ -10,7 +10,7 @@ jobs:
     symfony-docs-builder-build:
         name: Build (symfony-tools/docs-builder)
 
-        runs-on: self-hosted
+        runs-on: ubuntu-latest
 
         continue-on-error: true
 
